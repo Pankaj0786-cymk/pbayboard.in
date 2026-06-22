@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Registration Details</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#efefef;
+    overflow-x:hidden;
+}
+
+/* ======================
+HEADER
+====================== */
+
+.top-header{
+    background:#fff;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    border-bottom:1px solid #d8d8d8;
+}
+
+.logo{
+    width:55px;
+}
+
+.logo img{
+    width:100%;
+}
+
+.header-text{
+    color:#2f72b8;
+    font-weight:500;
+    line-height:1.4;
+    font-size:17px;
+}
+/* ======================
+TOP NAV
+====================== */
+
+.navbar{
+    background:#4b4b4b;
+    padding:14px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+}
+
+.menu-container{
+    position:relative;
+}
+
+.menu-btn{
+    width:70px;
+    height:55px;
+    border:none;
+    background:#fff;
+    font-size:28px;
+    border-radius:3px;
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:280px;
+    background:#4b4b4b;
+    list-style:none;
+    display:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    z-index:1000;
+}
+
+.dropdown-menu.show{
+    display:block;
+}
+
+.dropdown-menu li{
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.dropdown-menu li a{
+    display:block;
+    padding:14px 18px;
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:400;
+    transition:.3s;
+}
+
+.dropdown-menu li a:hover{
+    background:#5a5a5a;
+    padding-left:24px;
+    color:#5db2ff;
+}
+
+.lang-select{
+    height:40px;
+    padding:0 12px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+/* ======================
+CONTENT
+====================== */
+
+.content{
+    padding:25px;
+}
+
+.heading{
+    text-align:center;
+    font-size:34px;
+    color:#444;
+    font-weight:300;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:3px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.row{
+    padding:25px 30px;
+    border-bottom:1px solid #ececec;
+}
+.label{
+    font-size:16px;
+    font-weight:600;
+    color:#222;
+    margin-bottom:14px;
+}
+
+.value{
+    font-size:15px;
+    color:#555;
+    line-height:1.8;
+    font-weight:400;
+}
+
+/* ======================
+FOOTER
+====================== */
+
+.footer{
+    background:
+    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.78)),
+    url('https://images.unsplash.com/photo-1448375240586-882707db888b');
+    background-size:cover;
+    background-position:center;
+    padding:50px 30px;
+    color:#fff;
+}
+
+.footer-section{
+    margin-bottom:65px;
+}
+
+.footer-title{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.line{
+    height:2px;
+    background:#fff;
+    margin-bottom:25px;
+    position:relative;
+}
+
+.line::before{
+    content:'';
+    width:50px;
+    height:4px;
+    background:#1595ff;
+    position:absolute;
+    left:0;
+    top:-1px;
+}
+
+.footer-text{
+    line-height:2;
+    font-size:17px;
+}
+
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin-bottom:15px;
+    font-size:17px;
+}
+
+.copyright{
+    background:#000;
+    color:#fff;
+    text-align:center;
+    padding:18px;
+    font-size:18px;
+}
+
+/* ======================
+MOBILE
+====================== */
+
+@media(max-width:768px){
+
+.heading{
+    font-size:32px;
+}
+
+.header-text{
+    font-size:15px;
+}
+
+.row{
+    padding:25px;
+}
+
+.label{
+    margin-bottom:45px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="top-header">
+
+<div class="logo">
+<img src="Logo.webp" alt="Logo">
+</div>
+
+<div class="header-text">
+BOARD OF AYURVEDIC AND UNANI<br>
+SYSTEMS OF MEDICINE, PUNJAB
+</div>
+
+</header>
+
+<!-- NAV -->
+
+<div class="navbar">
+
+    <div class="menu-container">
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Apply Online</a></li>
+            <li><a href="#">Upload Document / Payments</a></li>
+            <li><a href="#">Print Form</a></li>
+            <li><a href="#">Print Provisional Certificate</a></li>
+            <li><a href="#">Application Status</a></li>
+            <li><a href="#">Enrollment</a></li>
+            <li><a href="#">NOC</a></li>
+            <li><a href="#">Good Prof. Certi.</a></li>
+            <li><a href="#">Additional Payment</a></li>
+        </ul>
+
+    </div>
+
+    <select class="lang-select">
+        <option>Select Language</option>
+        <option>English</option>
+        <option>Punjabi</option>
+    </select>
+
+</div>
+
+<!-- CONTENT -->
+
+<section class="content">
+
+<h1 class="heading">Heading content</h1>
+
+<div class="card">
+
+<div class="row">
+<div class="label">Candidate Name</div>
+<div class="value">Dr. Sita Singh</div>
+</div>
+
+<div class="row">
+<div class="label">Mother Name</div>
+<div class="value">Khanai Devi</div>
+</div>
+
+<div class="row">
+<div class="label">Father Name</div>
+<div class="value">Waryam Ram</div>
+</div>
+
+<div class="row">
+<div class="label">Registration No.</div>
+<div class="value">6356</div>
+</div>
+
+<div class="row">
+<div class="label">Course Name</div>
+<div class="value">Ayurvedacharya (B.A.M.S)</div>
+</div>
+
+<div class="row">
+<div class="label">Course Type</div>
+<div class="value">B.A.M.S</div>
+</div>
+
+<div class="row">
+<div class="label">Registration Type</div>
+<div class="value">Permanent</div>
+</div>
+
+<div class="row">
+<div class="label">Registration Date</div>
+<div class="value">2021-05-16</div>
+</div>
+
+<div class="row">
+<div class="label">Date of Birth</div>
+<div class="value">1986-04-14</div>
+</div>
+
+<div class="row">
+<div class="label">Address</div>
+<div class="value">
+Village New Pind Kalwanu Kalbano Patiala Punjab
+</div>
+</div>
+
+<div class="row">
+<div class="label">University</div>
+<div class="value">
+Guru Ravidas Ayurved University Punjab
+</div>
+</div>
+
+<div class="row">
+<div class="label">College</div>
+<div class="value">
+Dayanand Ayurvedic College Jalandhar
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-section">
+
+<h3 class="footer-title">Office Timings</h3>
+
+<div class="line"></div>
+
+<div class="footer-text">
+Working Days: Monday to Friday<br>
+Office Hours: 9:00 AM to 5:00 PM<br>
+Public Dealing Hours: 9:00 AM to 3:00 PM<br>
+Lunch Break: 1:30 PM to 2:00 PM
+</div>
+
+</div>
+
+<div class="footer-section">
+
+<h3 class="footer-title">Registration</h3>
+
+<div class="line"></div>
+
+<ul class="footer-links">
+<li>Apply Online</li>
+<li>Upload Document/Payments</li>
+<li>Print Form</li>
+<li>Refund & Cancellation Policy</li>
+<li>Terms & Conditions</li>
+<li>Privacy Policy</li>
+<li>Act & Rules</li>
+<li>About Us</li>
+</ul>
+
+</div>
+
+<div class="footer-section">
+
+<h3 class="footer-title">Contact Us</h3>
+
+<div class="line"></div>
+
+<div class="footer-text">
+REGISTRAR BOARD OF AYURVEDIC AND UNANI<br>
+SYSTEMS OF MEDICINE, PUNJAB<br>
+Punjab Medical Sikhya Bhawan Near Mayo Hospital<br>
+Sector 69, SAS Nagar (Mohali)
+</div>
+
+</div>
+
+</footer>
+
+<div class="copyright">
+© All Rights Reserved | Powered By INGEN Software & Networking
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById('dropdownMenu').classList.toggle('show');
+}
+
+// Close dropdown when clicking outside of it
+document.addEventListener('click', function(e){
+    var container = document.querySelector('.menu-container');
+    if(!container.contains(e.target)){
+        document.getElementById('dropdownMenu').classList.remove('show');
+    }
+});
+</script>
+
+</body>
+</html>
